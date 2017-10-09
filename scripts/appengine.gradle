@@ -1,0 +1,10 @@
+
+apply plugin: 'com.google.cloud.tools.appengine'
+
+appengineDeploy.dependsOn test
+appengineStage.dependsOn test
+
+appengine {
+    deploy.promote = true
+    run.skipSdkUpdateCheck = true
+}

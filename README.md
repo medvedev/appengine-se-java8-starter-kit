@@ -1,6 +1,20 @@
-# appengine-se-java8-starter-kit
+This is a sample HelloWorld project for Google App Engine Standard 
+environment using Java8, Servlet API v3, Gradle, Lombok  
 
-This repository contains "Hello-World"-like projects for Google App Engine Standard Environment 
-written in Java8 with Gradle, Lombok and other cool tools.
+If you don't have gradle installed, or your gradle version is too old, 
+use `gradlew.bat` (Windows) or `./gradlew` (MacOS\Linux) instead of "gradle" in commands below
 
-Each "started kit" lives in it's own branch.
+Pre-requirements for deployment to Appengine:  
+* Have Google Cloud SDK installed  
+* Have at least one project created in your cloud account  
+* Have configured project with `gcloud init`  
+
+Run locally:  
+`gradle appengineRun`
+
+Run tests:  
+`gradle test`
+
+Deploy:  
+`gradle appengineDeploy`
+

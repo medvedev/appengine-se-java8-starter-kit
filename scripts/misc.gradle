@@ -1,0 +1,29 @@
+test {
+    useJUnit()
+    testLogging.showStandardStreams = true
+    beforeTest { descriptor ->
+        logger.lifecycle("test: ${descriptor} Running")
+    }
+    onOutput { descriptor, event ->
+        logger.lifecycle("test: ${descriptor}: ${event.message}")
+    }
+    afterTest { descriptor, result ->
+        logger.lifecycle("test: ${descriptor}: ${result}")
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.2'
+}
+
+apply plugin: 'io.franzbecker.gradle-lombok'
+
+lombok {
+    version = "1.16.18"
+}
+
+apply plugin: "com.github.sherter.google-java-format"
+
+googleJavaFormat {
+    toolVersion = '1.4'
+}
