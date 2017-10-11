@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-echo $(curl -v "http://localhost:8080/")
+curl -i "http://localhost:8080/"
+
+printf "\n"
